@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="authorbox">
+ <div class="author1">
+  <a href="/author/{{ author.id }}">
+    <img src="/{{ author.pic }}" width="250px" height="300px">
+  <div class="title2">Author : {{ author.name }}</div>
+  </a>
+
+</div>
+<div class="u">
+  {% if show_follow %}
+  	<form method="post">
+  	  {% csrf_token %}
+      <input class="in" type="submit" name="" value="FOLLOW">
+  	  
+  	</form>
+  {% else %}
+  	<form method="post">
+      {% csrf_token %}
+      <input class="in" type="submit" name="" value="UNFOLLOW">
+    </form>
+  {% endif %}
+</div>
+
+  <h2>Author Books</h2>
+  <div class="div55">
+  <ul>
+
+    {% for book in books %}
+      <div  class = "div555" style="margin-bottom: 50px; float:left">
+          <a href="/book/{{ book.id }}">
+            <img src="/{{ book.pic.name }}" width="150px" height="200px">
+          <div class="title3">Title : {{ book.title }}</div>
+          </a>
+
+          <a href="/author/{{ book.author.id }}">
+          <div class="title3">Author : {{ book.author }}</div>
+          </a>
+      </div>
+      
+    {% empty %}
+      <div>No books available</div>
+    {% endfor %}
+  </ul>
+</div>
+
+
+
+</div>
+{% endblock %}

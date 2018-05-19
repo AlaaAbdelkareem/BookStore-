@@ -1,0 +1,689 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Quicksand;
+	background:url(../images/Background-Of-A-Library3.jpg);
+	background-size: cover;
+	background-position: center;
+	
+}
+
+ header nav{
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	padding: 10px 100px;
+	box-sizing: border-box;
+	transition: .3s;
+	z-index: 1;
+
+
+}
+/*.wrapper{
+	background: #000;
+}*/
+ header nav.black{
+	background: #000;
+	height: 130px;
+	padding: 10px 100px; 
+	z-index: 1;
+}
+
+ header nav .logo{
+    padding: 22px 20px;
+    height: 80px;
+    float: left;
+    font-size: 35px;
+    transition: .3s;
+    color: #fff;
+    z-index: 1;
+}
+
+ .logo1{
+    padding: 22px 20px;
+    height: 80px;
+    float: left;
+    font-size: 25px;
+    transition: .3s;
+    color: #fff;
+    z-index: 1;
+}
+
+header nav.black .logo{
+
+	color:#fff;
+}
+header nav ul{
+	list-style:none;
+	float:right;
+	margin:0;
+	padding: 0;
+	display:flex;
+}
+
+ header nav ul li{
+	list-style: none;
+}
+
+ header nav ul li a {
+	line-height: 80px;
+	color: #fff;
+	padding: 12px 30px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: .3s;
+}
+
+ header nav.black ul li a {
+	color:#fff;
+	background:#000;
+}
+
+header nav ul li a :focus{
+	outline :none;
+}
+
+header nav ul li a.active {
+	background: #FF0000;
+	color: #fff;
+	border-radius: 6px;
+}
+section.sec1{
+	width: 100%;
+	height: 1500px;
+	/*background:url(../images/Background-Of-A-Library3.jpg);
+*/
+	background-size: cover;
+	background-position: center;
+}
+
+.content{
+     margin-top: 80px
+}
+
+.content p {
+	width:900px;
+	margin: 30px auto;
+	text-align: justify;
+	font-size: 50px;
+	line-height: 30px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    color: #fff;
+    background-color: #000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px #fff;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+     color:#000;
+	background-color: #000}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #000;
+}
+
+
+.loginbox{
+	width: 460px;
+	height: 420px;
+	background-color: #000;
+	color:#fff;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	position: absolute;
+
+
+}
+.editbox{
+	width: 500px;
+	height: 420px;
+	background-color: #000;
+	color:#fff;
+	top:50%;
+	left:20%;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	position: absolute;
+	
+
+}
+
+
+.SignUpbox
+{
+	width: 460px;
+	height: 700px;
+	background-color: #000;
+	color:#fff;
+	top:67%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	position: absolute;
+	
+
+}
+
+h1{
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 25px;
+}
+
+h3{
+	color:#fff;
+}
+
+.loginbox p{
+	margin-left: 30px;
+	padding: 0;
+	font-weight: bold;
+}
+
+.editbox p{
+	margin-left: 30px;
+	padding: 0;
+	font-weight: bold;
+}
+
+
+.SignUpbox p{
+	margin-left: 30px;
+	padding: 0;
+	font-weight: bold;
+}
+
+.loginbox input{
+	width: 90%;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 20px;
+
+}
+
+.editbox input{
+    width: 90%;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 20px;
+}
+
+
+
+
+.SignUpbox input{
+	width: 90%;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 20px
+
+}
+
+
+
+
+.loginbox input[type="text"], input[type="password"]
+{
+	border:none;
+	border-bottom:  1px solid #fff;
+	outline:none;
+	height: 40px;
+	color: red;
+	font-size: 16px;
+	border-radius: 10px;
+
+}
+
+.editbox input[type="text"], input[type="password"]
+{
+	border:none;
+	border-bottom:  1px solid #fff;
+	outline:none;
+	height: 40px;
+	color: red;
+	font-size: 16px;
+	border-radius: 10px;
+
+}
+
+
+
+.SignUpbox input[type="text"], input[type="password"]
+{
+	border:none;
+	border-bottom:  1px solid #fff;
+	outline:none;
+	height: 40px;
+	color: red;
+	font-size: 16px;
+	border-radius: 10px;
+
+}
+.editbox input[type="text"], input[type="password"]
+{
+	border:none;
+	border-bottom:  1px solid #fff;
+	outline:none;
+	height: 40px;
+	color: red;
+	font-size: 16px;
+	border-radius: 10px;
+
+}
+
+.loginbox input[type="submit"]
+{
+  width: 95%;
+  border :none;
+  outline: none;
+  height: 40px;
+  background:#FF0000;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+  	
+}
+.editbox input[type="submit"]
+{
+  width: 95%;
+  border :none;
+  outline: none;
+  height: 40px;
+  background:#FF0000;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+  	
+}
+
+.SignUpbox input[type="submit"]
+{
+  width: 95%;
+  border :none;
+  outline: none;
+  height: 40px;
+  background:#FF0000;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+  	
+}
+
+
+.loginbox input[type="submit"]:hover
+{
+	cursor: pointer;
+	background: #ffc107;
+	color: #000;
+}
+
+.editbox input[type="submit"]:hover
+{
+	cursor: pointer;
+	background: #ffc107;
+	color: #000;
+}
+
+
+.SignUpbox input[type="submit"]:hover
+{
+	cursor: pointer;
+	background: #ffc107;
+	color: #000;
+}
+
+.loginbox a{
+	text-decoration: none;
+	font-size: 20 px;
+	line-height: 20px;
+	color: darkgray;
+	margin-left: 50px;
+}
+.editbox a{
+	text-decoration: none;
+	font-size: 20 px;
+	line-height: 20px;
+	color: darkgray;
+	margin-left: 50px;
+}
+
+.SignUpbox a{
+	text-decoration: none;
+	font-size: 20 px;
+	line-height: 20px;
+	color: darkgray;
+	margin-left: 50px;
+}
+
+
+
+.loginbox a:hover{
+	color: #ffc107;
+}
+
+.editbox a:hover{
+	color: #ffc107;
+}
+
+.SignUpbox a:hover{
+	color: #ffc107;
+}
+.bar{
+	background-color: #000;
+	width: 280px;
+	height: 40px;
+	padding-top: 40px;
+
+}
+.input{
+	background-color:#fff; 
+	width: 200px;
+	height: 40px;
+	padding-left: 20px;
+	float: left;
+	border-radius: 3px;
+
+
+
+}
+.title{
+	background-color: #FF0000;
+	width: 80px;
+	height: 40px;
+	padding-top: 3px;
+	color: white;
+	font-size: 18px;
+	text-align: center; 
+	float:left;
+	font-family:Quicksand #fff;
+	border-radius: 3px;
+}
+/*--------footer-----------*/
+
+footer {
+	width: 100%;
+	background-color: #000;
+	padding: 60px 0px;
+	height: 30%
+
+}
+
+footer nav {
+	float: left;
+}
+
+footer nav ul li {
+	display: :inline-block;
+	margin-left: 20px;
+	list-style: none;
+}
+footer nav ul li a {
+	font-weight: bold;
+	color: #fff;
+}
+.nav2{
+	
+	width: 100%;
+	padding: 60px 0px;
+	float: left;
+	margin-left: 20px;
+	list-style: none;
+}
+
+footer nav ul{
+	list-style:none;
+	float:left;
+	display:flex;
+}
+
+ footer nav ul li{
+	list-style: none;
+}
+
+footer nav ul li a {
+	padding: 12px 30px;
+	transition: .3s;
+}
+
+.div11{
+	width: 800px;
+	height: 600px;
+	background-color:rgba(0, 0, 0, .6);
+	color:#fff;
+	top:500px;
+	left:25%;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	position: absolute;
+    border-radius: 5px;
+    text-align: center; 
+     z-index: -1;
+}
+.div22{
+	width: 800px;
+	height: 600px;
+	background-color:rgba(0, 0, 0, .6);
+	color:#fff;
+	top:500px;
+	left:75%;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	position: absolute;
+	border-radius: 5px;
+	text-align: center; 
+	z-index: -1;
+
+}
+
+.div33{
+	width: 800px;
+	height:600px;
+	background-color:rgba(0, 0, 0, .6);
+	color:#fff;
+	top:1150px;
+	left:25%;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	position: absolute;
+	border-radius: 5px;
+	text-align: center;
+	z-index: -1;
+
+}
+
+.div44{
+	width: 800px;
+	height: 600px;
+	background-color:rgba(0, 0, 0, .6);
+	color:#fff;
+	top:1150px;
+	left:75%;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	position: absolute;
+	border-radius: 5px;
+	text-align: center;
+	z-index: -1;
+
+}
+
+.div55{
+    width: 100%;
+	height: 600px;
+	color:#fff;
+	top:900px;
+	left:30%;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	position: absolute;
+	border-radius: 5px;
+	text-align: center;
+	padding-left: 100px;
+	z-index: -1;
+
+}
+.div555{
+	padding-left: 100px;
+	text-align: center;
+
+ z-index: -1;
+
+}
+
+.authorbox{
+	padding-top: 150px;
+    padding-left: 100px;
+    width: 100%;
+    background-color:rgba(0, 0, 0, .6);
+    height:900px;
+    color: #fff;
+    font-size: 20px;
+    left:15%;
+    z-index: -1;
+
+
+}
+
+
+
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	padding-left: 38px;
+	z-index: -1;
+}
+
+.card:hover{
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.titlebooks{
+	font-size: 16px;
+	color: #fff;
+	display: inline-block;
+	z-index: -1;
+}
+.bookpage{
+    padding-top: 150px;
+    padding-left: 150px;
+    width: 100%;
+    background-color:rgba(0, 0, 0, .6);
+    height:900px;
+    color: #fff;
+    font-size: 20px;
+    left:15%;
+    z-index: -1;
+}
+
+.fontbtn{
+	 color:#fff;
+
+
+}
+.fontbtn2{
+	padding-left: 30%;
+}
+.title1{
+	color: #fff;
+	font-size: 30px;
+}
+
+.title2{
+	color: #fff;
+	font-size: 30px;
+	padding-left: 20px;
+}
+.title3 {
+	color: #fff;
+	font-size: 20px;
+}
+.div66{
+    padding-top: 150px;
+    padding-left: 100px;
+    width: 100%;
+    background-color:rgba(0, 0, 0, .6);
+    height:900px;
+    color: #fff;
+    font-size: 20px;
+    left:15%;
+	background-color:rgba(0, 0, 0, .6);
+	color: #fff;
+	text-align: center;
+	z-index: -1;
+
+}
+
+button{
+	background: #FF0000;
+	color: #fff;
+	border-radius: 6px;
+}
+
+.in {
+	width: 10%;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 20px;
+	background-color: #FF0000;
+	color: #fff;
+    border-color: #FF0000;
+    z-index: -1;
+ 
+}
+.u{
+	padding-left: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="div66">
+  <h1>Welcome, {{ user.username }}!</h1>
+
+  {% for book in books %}
+  
+    <div style="margin-bottom: 50px ; float:left">
+    <div class="card">
+      <a href="/book/{{ book.id }}">
+        <img src="/{{ book.pic.name }}" width="150px" height="200px">
+
+        <div class="title3">{{ book.title }}</div>
+
+      </a>
+
+
+      <a href="/author/{{ book.author.id }}">
+      <div class="title3">Author : {{ book.author }}</div>
+      </div>
+      </a>
+    </div>
+
+    
+  {% empty %}
+    <div>No books available</div>
+  {% endfor %}
+</div>
+{% endblock %}

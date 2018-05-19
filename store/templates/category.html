@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+  <a href="/category/{{ category.id }}">
+    <img src="/{{ category.pic }}">
+  <div>{{ category.title }}</div>
+  </a>
+
+
+  {% if show_follow %}
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Like</button>
+    </form>
+  {% else %}
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Unlike</button>
+    </form>
+  {% endif %}
+
+
+  <h2>category Books</h2>
+
+  <ul>
+    {% for book in books %}
+      <div style="margin-bottom: 50px">
+          <a href="/book/{{ book.id }}">
+            <img src="/{{ book.pic.name }}">
+          <div>Title : {{ book.title }}</div>
+          </a>
+
+          <a href="/category/{{ book.category.id }}">
+          <div>category : {{ book.category }}</div>
+          </a>
+      </div>
+      
+    {% empty %}
+      <div>No books available</div>
+    {% endfor %}
+  </ul>
+
+
+
+
+
+{% endblock %}

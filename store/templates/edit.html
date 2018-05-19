@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="editbox">
+  <h1>Edit</h1>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {% if field.auto_id != 'id_password' %}
+            {{ field.label_tag }}<br>
+            {{ field }}
+        {% elif field.auto_id == 'id_password' %}
+
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+     <input type="submit" name="" value="SUBMIT">
+   <a  href="/updateUserPassword">Click Me To Change Password</a>
+    
+   
+  </form>
+</div>
+{% endblock %}

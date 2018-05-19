@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta  http-equiv="Content-Type" content= "text/html" charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        {% load static  %}
+      <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   
+
+    <title>{% block title %}Simple is Better Than Complex{% endblock %}</title>
+  </head>
+
+
+  <body>
+    <header>
+         <div class="wrapper">
+            <nav class="black">
+               <div class="logo">BOOKSTORE</div>
+                <ul>
+                   <li class="logo1"><a href="#">Home</a></li>
+        
+
+                    <li class="logo1">
+                       <div class="dropdown">    
+                         <a class="dropbtn" href="#">Books</a>
+                         <div class="dropdown-content">
+                            <a  href="#">Link 1</a>
+                             <a href="#">Link 2</a>
+                              <a href="#">Link 3</a> 
+
+                          </div>
+                       </div>
+                    </li>
+
+
+                    <li class="logo1">
+                      <div class="dropdown">   
+                        <a class="dropbtn" href="#">Author</a>
+                        <div class="dropdown-content">
+                           <a  href="#">Link 1</a>
+                             <a href="#">Link 2</a>
+                              <a href="#">Link 3</a> 
+
+                          </div>
+                      </div>
+                     </li>
+
+                    <li class="logo1" ">
+                      <div class="dropdown">    
+                        <a class="dropbtn" href="#">Category</a>
+                         <div class="dropdown-content">
+                            {% for category in categories %}
+                                       
+
+                                            <a href="/category/{{ category.id }}">{{ category.title }}
+                                            </a>
+                                        
+                                      {% empty %}
+                                        <div>No categorys available</div>
+                                      {% endfor %}
+
+                         </div>
+                      </div>
+                    </li>
+
+
+
+
+
+      <li class="logo1">
+        <aside class="menu">
+
+      {% if user.is_authenticated %}
+        <a class="active" href="{% url 'logout' %}">logout</a>
+      {% else %}
+        <a class="active" href="{% url 'login' %}">login</a>   <a class="active" href="{% url 'signup' %}">signup</a>
+      {% endif %}
+            </aside>
+          </li>
+
+       
+       <li class="searchbar">
+        <div class="bar">
+           <form action="/search" method="GET">
+              <input type="text" placeholder="Search"  
+             class="input" name="q">
+             <input  class="title" type="submit" value="Search">
+           </form>
+        </div>
+      </li>
+    </header>
+
+    <section class="sec1">
+
+
+  <h2>Welcome, {{ user.username }}!</h2>
+<!-- 
+<div class="div22">
+  <h3>Categories</h3>
+  {% for category in categories %}
+  
+    <div style="margin-bottom: 50px; float:left">
+    <div class="card">
+        <a href="/category/{{ category.id }}">
+          <img src="/{{ category.pic }}" width="150px" height="200px" >
+    </div>
+        <div class="titlebooks">Title:{{ category.title }}</div>
+        </a>
+        <a href="/category/{{ category.id }}">
+        </a>
+    </div>
+  
+  {% empty %}
+    <div>No categorys available</div>
+  {% endfor %}
+</div> -->
+
+<div class="div22">
+  <h3>User Informations</h3>
+  <a href="/updateUser">{{ user.username }}</a>
+  {% for userBook in userBooks %}
+    <div style="margin-bottom: 50px ; float:left">
+       <a href="/book/{{ book.id }}">
+        <div class="title1">Title : {{ userBook.title }}</div></a>
+    </div>
+    
+  {% empty %}
+    <div class="title1">No Books available</div>
+  {% endfor %}
+
+   <h3>user Wishs</h3>
+  {% for userWish in userWishs %}
+    <div style="margin-bottom: 50px ; float:left">
+       <a href="/book/{{ book.id }}">
+        <div class="title1">Title : {{ userWish.title }}</div></a>
+    </div>
+    
+  {% empty %}
+    <div class="title1">No Books available</div>
+  {% endfor %}
+
+  <h3>user Categories</h3>
+  {% for userCategory in userCategories %}
+    <div style="margin-bottom: 50px ; float:left">
+        <a href="/category/{{ category.id }}">
+        <div class="title1">Title : {{ userCategory.title }}</div></a>
+    </div>
+    
+  {% empty %}
+    <div class="title1">No Categories available</div>
+  {% endfor %}
+</div>
+
+
+
+
+<div class="div11">
+  <h3>Most read books</h3>
+  {% for book in MostReadBooks %}
+  	<div style="margin-bottom: 50px; float:left">
+          <div class="card">
+  			       <a href="/book/{{ book.id }}">
+  				     <img src="/{{ book.pic.name }}" width="150px" height="200px" >
+         </div>
+  			    <div class="titlebooks">Title:/{{ book.title }}</div>
+            </a><br>
+            <a href="/author/{{ book.author.id }}">
+              <div class="titlebooks">Author:/{{ book.author }}</div>
+            </a>
+  	</div>
+
+  {% empty %}
+  	<div>No books available</div>
+  {% endfor %}
+</div>
+
+
+
+<div class="div33">
+  <h3>Top rated books</h3>
+  {% for book in topRatedBooks %}
+    <div style="margin-bottom: 50px; float:left">
+    <div class="card">
+        <a href="/book/{{ book.id }}">
+          <img src="/{{ book.pic.name }}" width="150px" height="200px">
+      </div>
+        <div class="titlebooks">Title : {{ book.title }}</div>
+        </a>
+
+        <a href="/author/{{ book.author.id }}">
+        <br>
+        <div class="titlebooks">Author : {{ book.author }}</div>
+        </a>
+    </div>
+    
+  {% empty %}
+    <div>No books available</div>
+  {% endfor %}
+</div>
+
+
+
+<div class="div44">
+  <h3>Top followed Author</h3>
+  {% for author in topFollowedAuthors %}
+    <div style="margin-bottom: 50px; float:left">
+    <div class="card">
+        <a href="/author/{{ author.id }}" >
+          <img src="/{{ author.pic }}" width="150px" height="200px">
+        </div>
+        <div class="titlebooks">Name : {{ author.name }}</div>
+        </a>
+    </div>
+    <br>
+  {% empty %}
+    <div >No authors available</div>
+  {% endfor %}
+</div>
+
+
+</section>
+
+    <footer>
+       
+      
+       <nav>
+         <ul >
+          <li><a href="#">HOME</a></li> 
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">HOME</a></li> 
+          <li><a href="#">HOME</a></li>  
+
+
+         </ul>
+         </nav>
+         
+        
+
+    </footer>
+  </body>
+</html>
+

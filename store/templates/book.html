@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Book{% endblock %}
+
+
+{% block content %}
+<div class="bookpage">
+  <div class="fontbtn">
+  <a href="/book/{{ book.id }}">
+  	<img src="/{{ book.pic.name }}" width="370px" height="430px"   >
+  	<div class="title1">{{ book.title }}</div>
+  </a>
+
+  <a href="/author/{{ book.author.id }}">
+  <div class="title1">Author:{{ book.author }}</div>
+  </a>
+ </div>
+
+
+ <div class="fontbtn2">
+    {% if show_read %}
+  	  <form method="post">
+  	    {% csrf_token %}
+  	     <button type="submit">Mark as read</button>
+  	  </form>
+     {% else %}
+  	You have read this book
+     {% endif %}
+
+
+      {% if show_wish %}
+  	      <form method="post">
+		         {% csrf_token %}
+		          <input type="hidden" name="request" value="WISH">
+    		      <button type="submit">Add to my wish list</button>
+        	</form>
+      {% else %}
+        This book is now on your wish list
+    {% endif %}
+
+    </div>
+
+     <form method="post">
+      {% csrf_token %}
+      <input type="hidden" name="request" value="RATE">
+      <input type="text" name="rate" value={{ rate_value }}>
+      <button type="submit">Rate</button>
+    </form>
+
+ </div>
+
+{% endblock %}
+
